@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="47dp"
+    android:layout_height="122dp"
+    android:alpha="0.8"
+    android:background="@drawable/pop_bg" >
+
+    <com.videoplayer.library.ui.base.MediaPlayerBrightSeekBar
+        android:id="@+id/seekbar_bright_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:maxHeight="@dimen/livereplay_controller_seekbar_height"
+        android:minHeight="@dimen/livereplay_controller_seekbar_height"
+        android:progressDrawable="@drawable/blue_ksy_video_progress_seekbar_style_selector"
+        android:thumb="@drawable/blue_ksy_video_progress_seekbar_thumb_selector"
+        android:thumbOffset="6dp" />
+
+</RelativeLayout>

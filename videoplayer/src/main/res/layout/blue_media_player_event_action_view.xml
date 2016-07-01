@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/event_action_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Wait -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/wait_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/blue_ksy_cover_play"/>
+        </RelativeLayout>
+
+        <!-- Complete -->
+        <RelativeLayout
+            android:id="@+id/complete_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="147dp"
+                android:layout_height="73dp"
+                android:alpha="0.8"
+                android:background="@drawable/pop_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/replay_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="center"
+                    android:src="@drawable/player_controller_action_replay"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/replay"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:visibility="visible"/>
+
+
+            </LinearLayout>
+
+            <!-- Complete Normal -->
+            <RelativeLayout
+                android:id="@+id/complete_replay_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/back_image_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/small_margin_left"
+                    android:layout_marginRight="@dimen/small_margin_left"
+                    android:layout_marginTop="@dimen/small_margin_left"
+                    android:src="@drawable/blue_ksy_back"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin_left"
+                    android:layout_toRightOf="@+id/back_image_view"
+                    android:text="@string/short_video_content"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/finish_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/short_video_end"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/complete_replay_bt"
+                    android:layout_width="@dimen/live_margin_one_hundred"
+                    android:layout_height="@dimen/live_bottom_edit_height"
+                    android:layout_below="@+id/finish_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/event_action_padding_left"
+                    android:background="@color/lightblue"
+                    android:text="@string/replay"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- Error -->
+        <LinearLayout
+            android:id="@+id/error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.9"
+            android:background="@color/black"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/error_info_title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/player_error"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/video_error_replay_bt"
+                android:layout_width="@dimen/live_heart_margin"
+                android:layout_height="@dimen/live_bottom_edit_height"
+                android:layout_marginTop="@dimen/event_action_padding_left"
+                android:src="@drawable/blue_ksy_cover_play"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

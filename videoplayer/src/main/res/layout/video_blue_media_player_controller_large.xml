@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/controller_top_layout"
+        layout="@layout/video_blue_media_player_controller_large_top_view"/>
+
+    <RelativeLayout
+        android:id="@+id/video_progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/controller_large_bottom_bg"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.95"
+        android:background="#1b1b1b">
+
+        <!-- 暂停 -->
+        <ImageView
+            android:id="@+id/video_start_pause_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24dp"
+            android:src="@drawable/video_play_land_image"/>
+
+        <TextView
+            android:id="@+id/video_current_time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/video_start_pause_image_view"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/init_time"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/video_window_screen_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/video_change_small"/>
+
+        <ImageView
+            android:id="@+id/video_volume_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/video_window_screen_image_view"
+            android:src="@drawable/video_volume_icon"/>
+
+        <TextView
+            android:id="@+id/video_total_time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/video_volume_ic"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/total_time"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+
+
+        <com.videoplayer.library.ui.base.MediaPlayerVideoSeekBar
+            android:id="@+id/video_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:layout_toLeftOf="@id/video_total_time_text_view"
+            android:layout_toRightOf="@id/video_current_time_text_view"
+            android:maxHeight="@dimen/livereplay_controller_seekbar_height"
+            android:minHeight="@dimen/livereplay_controller_seekbar_height"
+            android:progressDrawable="@drawable/blue_ksy_video_progress_seekbar_style_selector"
+            android:thumb="@drawable/blue_ksy_video_progress_seekbar_thumb_selector"
+            android:thumbOffset="4dp"/>
+    </RelativeLayout>
+
+    <!-- 新添加亮度调节 -->
+    <com.videoplayer.library.ui.base.MediaPlayerControllerBrightView
+        android:id="@+id/widge_control_light_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/bright_margin_left"
+        android:visibility="gone"/>
+
+    <com.videoplayer.library.ui.base.MediaPlayerMovieRatioView
+        android:id="@+id/widget_video_ratio_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#CCCCCC"
+        android:padding="@dimen/bright_padding"
+        android:visibility="gone"/>
+
+    <!-- 进度调节 -->
+    <com.videoplayer.library.ui.base.MediaPlayerSeekView
+        android:id="@+id/widget_seek_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"/>
+
+    <!-- 屏幕锁 -->
+    <com.videoplayer.library.ui.base.MediaPlayerLockView
+        android:id="@+id/widget_lock_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/screen_lock_margin_left"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:duplicateParentState="true"
+            android:src="@drawable/blue_ksy_lock_selector"/>
+    </com.videoplayer.library.ui.base.MediaPlayerLockView>
+
+    <!-- 音量 -->
+    <com.videoplayer.library.ui.base.MediaPlayerControllerVolumeView
+        android:id="@+id/widget_controller_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/video_progress_layout"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="32dp"
+        android:visibility="gone"/>
+
+    <!-- 相关 -->
+    <ListView
+        android:id="@+id/relatedlistview"
+        android:layout_width="192dp"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/video_progress_layout"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/controller_top_layout"
+        android:alpha="0.95"
+        android:background="#1b1b1b"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:scrollbars="none"
+        android:visibility="gone"/>
+
+</RelativeLayout>
