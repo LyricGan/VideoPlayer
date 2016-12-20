@@ -5,7 +5,7 @@
     android:alpha="0.8"
     android:background="@drawable/pop_bg" >
 
-    <com.videoplayer.library.ui.base.MediaPlayerBrightSeekBar
+    <com.videoplayer.library.ui.MediaPlayerBrightSeekBar
         android:id="@+id/seekbar_bright_progress"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

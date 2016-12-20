@@ -1,4 +1,4 @@
-package com.videoplayer.library.ui.video;
+package com.videoplayer.library.ui;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -28,17 +28,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.videoplayer.library.R;
-import com.videoplayer.library.controller.video.IVideoController;
-import com.videoplayer.library.controller.video.VideoMediaPlayerLargeControllerView;
-import com.videoplayer.library.controller.video.VideoMediaPlayerSmallControllerView;
+import com.videoplayer.library.controller.IVideoController;
+import com.videoplayer.library.controller.VideoMediaPlayerLargeControllerView;
+import com.videoplayer.library.controller.VideoMediaPlayerSmallControllerView;
 import com.videoplayer.library.model.MediaPlayMode;
 import com.videoplayer.library.model.MediaPlayerVideoQuality;
 import com.videoplayer.library.model.MediaQualityBean;
 import com.videoplayer.library.model.RelateVideoInfo;
 import com.videoplayer.library.player.IMediaPlayerPlus;
-import com.videoplayer.library.ui.base.MediaPlayerBufferingView;
-import com.videoplayer.library.ui.base.MediaPlayerEventActionView;
-import com.videoplayer.library.ui.base.MediaPlayerLoadingView;
 import com.videoplayer.library.util.Constants;
 import com.videoplayer.library.util.IPowerStateListener;
 import com.videoplayer.library.util.MediaPlayerUtils;
@@ -57,18 +54,18 @@ public abstract class VideoMediaPlayerView extends RelativeLayout implements IPo
     private Window mWindow;
 
     private ViewGroup mRootView;
-    //videoview
+
     protected MediaPlayerVideoView mMediaPlayerVideoView;
 
-    //全屏控制器界面
+    // 全屏控制器界面
     private VideoMediaPlayerLargeControllerView mMediaPlayerLargeControllerView;
-    //小屏控制器界面
+    // 小屏控制器界面
     private VideoMediaPlayerSmallControllerView mMediaPlayerSmallControllerView;
-    //缓冲界面
+    // 缓冲界面
     private MediaPlayerBufferingView mMediaPlayerBufferingView;
-    //加载界面
+    // 加载界面
     private MediaPlayerLoadingView mMediaPlayerLoadingView;
-    //事件界面
+    // 事件界面
     private MediaPlayerEventActionView mMediaPlayerEventActionView;
 
     private PlayerViewCallback mPlayerViewCallback;

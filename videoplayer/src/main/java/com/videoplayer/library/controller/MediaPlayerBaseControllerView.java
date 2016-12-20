@@ -1,4 +1,4 @@
-package com.videoplayer.library.controller.base;
+package com.videoplayer.library.controller;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -18,8 +18,8 @@ import android.widget.MediaController.MediaPlayerControl;
 import com.videoplayer.library.model.MediaPlayerMovieRatio;
 import com.videoplayer.library.model.MediaQualityBean;
 import com.videoplayer.library.model.RelateVideoInfo;
-import com.videoplayer.library.ui.base.MediaPlayerEventActionView;
-import com.videoplayer.library.ui.video.VideoMediaPlayerView;
+import com.videoplayer.library.ui.MediaPlayerEventActionView;
+import com.videoplayer.library.ui.VideoMediaPlayerView;
 import com.videoplayer.library.util.MediaPlayerUtils;
 
 /**

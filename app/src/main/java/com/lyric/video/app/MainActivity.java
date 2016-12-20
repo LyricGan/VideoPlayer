@@ -7,32 +7,32 @@ import com.videoplayer.library.VideoPlayer;
 
 public class MainActivity extends Activity {
     private static final String TEST_URL = "http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4";
-    private VideoPlayer video_player;
+    private VideoPlayer videoPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        video_player = (VideoPlayer) findViewById(R.id.video_player);
+        videoPlayer = (VideoPlayer) findViewById(R.id.video_player);
 
-        video_player.play(TEST_URL);
+        videoPlayer.play(TEST_URL);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        video_player.onResume();
+        videoPlayer.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        video_player.onPause();
+        videoPlayer.onPause();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        video_player.onDestroy();
+        videoPlayer.onDestroy();
     }
 }

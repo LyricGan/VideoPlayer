@@ -1,4 +1,4 @@
-package com.videoplayer.library.controller.video;
+package com.videoplayer.library.controller;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -17,20 +17,19 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.videoplayer.library.R;
-import com.videoplayer.library.controller.base.MediaPlayerBaseControllerView;
 import com.videoplayer.library.model.MediaPlayMode;
 import com.videoplayer.library.model.MediaPlayerVideoQuality;
 import com.videoplayer.library.model.MediaQualityBean;
 import com.videoplayer.library.model.RelateVideoInfo;
 import com.videoplayer.library.model.RelatedVideoAdapter;
-import com.videoplayer.library.ui.base.MediaPlayerControllerBrightView;
-import com.videoplayer.library.ui.base.MediaPlayerControllerVolumeView;
-import com.videoplayer.library.ui.base.MediaPlayerLockView;
-import com.videoplayer.library.ui.base.MediaPlayerQualityPopupView;
-import com.videoplayer.library.ui.base.MediaPlayerScreenSizePopupView;
-import com.videoplayer.library.ui.base.MediaPlayerSeekView;
-import com.videoplayer.library.ui.base.MediaPlayerVideoSeekBar;
-import com.videoplayer.library.ui.base.MediaPlayerVolumeSeekBar;
+import com.videoplayer.library.ui.MediaPlayerControllerBrightView;
+import com.videoplayer.library.ui.MediaPlayerControllerVolumeView;
+import com.videoplayer.library.ui.MediaPlayerLockView;
+import com.videoplayer.library.ui.MediaPlayerQualityPopupView;
+import com.videoplayer.library.ui.MediaPlayerScreenSizePopupView;
+import com.videoplayer.library.ui.MediaPlayerSeekView;
+import com.videoplayer.library.ui.MediaPlayerVideoSeekBar;
+import com.videoplayer.library.ui.MediaPlayerVolumeSeekBar;
 import com.videoplayer.library.util.Constants;
 import com.videoplayer.library.util.MediaPlayerUtils;
 

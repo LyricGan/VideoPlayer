@@ -102,7 +102,7 @@
             android:textColor="@color/white"
             android:textSize="11sp"/>
 
-        <com.videoplayer.library.ui.base.MediaPlayerVideoSeekBar
+        <com.videoplayer.library.ui.MediaPlayerVideoSeekBar
             android:id="@+id/seekbar_video_progress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -3,7 +3,7 @@ package com.videoplayer.library;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.videoplayer.library.ui.video.VideoMediaPlayerView;
+import com.videoplayer.library.ui.VideoMediaPlayerView;
 
 /**
  * @author lyric

@@ -1,4 +1,4 @@
-package com.videoplayer.library.controller.video;
+package com.videoplayer.library.controller;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -11,10 +11,9 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.videoplayer.library.R;
-import com.videoplayer.library.controller.base.MediaPlayerBaseControllerView;
 import com.videoplayer.library.model.MediaPlayMode;
-import com.videoplayer.library.ui.base.MediaPlayerVideoSeekBar;
-import com.videoplayer.library.ui.video.VideoMediaPlayerView;
+import com.videoplayer.library.ui.MediaPlayerVideoSeekBar;
+import com.videoplayer.library.ui.VideoMediaPlayerView;
 import com.videoplayer.library.util.MediaPlayerUtils;
 
 public class VideoMediaPlayerSmallControllerView extends MediaPlayerBaseControllerView implements View.OnClickListener {

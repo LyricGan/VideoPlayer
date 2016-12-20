@@ -1,4 +1,4 @@
-package com.videoplayer.library.ui.base;
+package com.videoplayer.library.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.videoplayer.library.R;
-import com.videoplayer.library.controller.video.IVideoController;
+import com.videoplayer.library.controller.IVideoController;
 import com.videoplayer.library.model.MediaPlayerMovieRatio;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.videoplayer.library.controller.video;
+package com.videoplayer.library.controller;
 
 import android.widget.MediaController.MediaPlayerControl;
 
