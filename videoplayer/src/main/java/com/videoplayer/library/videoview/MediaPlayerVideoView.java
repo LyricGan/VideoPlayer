@@ -368,28 +368,28 @@ public class MediaPlayerVideoView extends SurfaceView implements MediaPlayerCont
         mMediaPlayerPlus = mediaPlayerPlus;
     }
 
-    public void setOnPreparedListener(OnPreparedListener l) {
-        mOnPreparedListener = l;
+    public void setOnPreparedListener(OnPreparedListener listener) {
+        mOnPreparedListener = listener;
     }
 
-    public void setOnCompletionListener(OnCompletionListener l) {
-        mOnCompletionListener = l;
+    public void setOnCompletionListener(OnCompletionListener listener) {
+        mOnCompletionListener = listener;
     }
 
-    public void setOnErrorListener(OnErrorListener l) {
-        mOnErrorListener = l;
+    public void setOnErrorListener(OnErrorListener listener) {
+        mOnErrorListener = listener;
     }
 
-    public void setOnBufferingUpdateListener(OnBufferingUpdateListener l) {
-        mOnBufferingUpdateListener = l;
+    public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener) {
+        mOnBufferingUpdateListener = listener;
     }
 
-    public void setOnSeekCompleteListener(OnSeekCompleteListener l) {
-        mOnSeekCompleteListener = l;
+    public void setOnSeekCompleteListener(OnSeekCompleteListener listener) {
+        mOnSeekCompleteListener = listener;
     }
 
-    public void setOnInfoListener(OnInfoListener l) {
-        mOnInfoListener = l;
+    public void setOnInfoListener(OnInfoListener listener) {
+        mOnInfoListener = listener;
     }
 
     public boolean isNeedPauseAfterLeave() {

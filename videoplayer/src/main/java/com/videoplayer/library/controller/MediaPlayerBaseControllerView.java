@@ -226,7 +226,6 @@ public abstract class MediaPlayerBaseControllerView extends FrameLayout {
             default:
                 break;
         }
-
         if (mNeedGesture) {
             if (mGestureDetector != null) {
                 mGestureDetector.onTouchEvent(event);
@@ -279,7 +278,7 @@ public abstract class MediaPlayerBaseControllerView extends FrameLayout {
                             if (totalVolumeDistance <= 0) {
                                 totalVolumeDistance = MediaPlayerUtils.getRealDisplayHeight(mHostWindow);
                             }
-                            onGestureVolumeChange(distanceY, totalVolumeDistance /4, audioManager);
+                            onGestureVolumeChange(distanceY, totalVolumeDistance / 4, audioManager);
                         }
                     }
                     // for light gesture
@@ -399,18 +398,18 @@ public abstract class MediaPlayerBaseControllerView extends FrameLayout {
     public void setRelateVideoInfo(RelateVideoInfo mRelateVideoInfo) {
         this.mRelateVideoInfo = mRelateVideoInfo;
     }
+
     public RelateVideoInfo getRelateVideoInfo() {
         return this.mRelateVideoInfo;
     }
 
-//    public void setMovieRatio(MediaPlayerMovieRatio movieRatio) {
-//        this.mCurrentMovieRatio = movieRatio;
-//    }
-//
-//    public MediaPlayerMovieRatio getMovieRatio() {
-//
-//        return this.mCurrentMovieRatio;
-//    }
+    public void setMovieRatio(MediaPlayerMovieRatio movieRatio) {
+        this.mCurrentMovieRatio = movieRatio;
+    }
+
+    public MediaPlayerMovieRatio getMovieRatio() {
+        return this.mCurrentMovieRatio;
+    }
 
     public abstract void initViews();
 
@@ -422,7 +421,7 @@ public abstract class MediaPlayerBaseControllerView extends FrameLayout {
 
     public abstract void onTimerTicker();
 
-    protected void onShowVolumeControl(){
+    protected void onShowVolumeControl() {
     }
 
     // Added
