@@ -12,16 +12,16 @@ import com.videoplayer.library.ui.VideoMediaPlayerView;
  */
 public class VideoPlayer extends VideoMediaPlayerView {
 
-    public VideoPlayer(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
     public VideoPlayer(Context context) {
         super(context);
     }
 
     public VideoPlayer(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    public VideoPlayer(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
     }
 
     @Override

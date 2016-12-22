@@ -6,8 +6,9 @@ import android.net.NetworkInfo;
 
 
 public class NetworkUtil {
-	public static enum netType {
-		wifi, CMNET, CMWAP, noneNet
+
+	public enum netType {
+        WIFI, CMNET, CMWAP, NONE_NET
 	}
 
 	public static boolean isNetworkAvailable(Context context) {
@@ -22,7 +23,6 @@ public class NetworkUtil {
 		}
 		return false;
 	}
-
 
 	public static boolean isNetworkConnected(Context context) {
 		if (context != null) {
@@ -72,23 +72,19 @@ public class NetworkUtil {
 		ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo == null) {
-			return netType.noneNet;
+			return netType.NONE_NET;
 		}
 		int nType = networkInfo.getType();
-
 		if (nType == ConnectivityManager.TYPE_MOBILE) {
 			if (networkInfo.getExtraInfo().toLowerCase().equals("cmnet")) {
 				return netType.CMNET;
-			}
-
-			else {
+			} else {
 				return netType.CMWAP;
 			}
 		} else if (nType == ConnectivityManager.TYPE_WIFI) {
-			return netType.wifi;
+			return netType.WIFI;
 		}
-		return netType.noneNet;
-
+		return netType.NONE_NET;
 	}
 	
 	public static int getNetWorkType(Context context) {

@@ -1,24 +1,24 @@
 package com.videoplayer.library.model;
 
-
 public enum MediaPlayerMovieRatio {
-
-    WIDESCREEN(MediaPlayerMovieRatio.VIDEO_MOVIE_RATIO_16_9,"16:9"), NORMAL(MediaPlayerMovieRatio.VIDEO_MOVIE_RATIO_4_3,"4:3");
+    WIDESCREEN(MediaPlayerMovieRatio.VIDEO_MOVIE_RATIO_16_9,"16:9"),
+    NORMAL(MediaPlayerMovieRatio.VIDEO_MOVIE_RATIO_4_3,"4:3");
     
     public static final int VIDEO_MOVIE_RATIO_16_9 = 1;
     public static final int VIDEO_MOVIE_RATIO_4_3 = 2;
+
+    private int flag = VIDEO_MOVIE_RATIO_16_9;
+    private String name;
     
     private MediaPlayerMovieRatio(int flag, String name) {
         this.flag = flag;
         this.name = name;
     }
     
-    private int flag = VIDEO_MOVIE_RATIO_16_9;
-    private String name;
-    
     public int getFlag() {
         return flag;
     }
+
     public String getName() {
         return name;
     }
@@ -31,7 +31,5 @@ public enum MediaPlayerMovieRatio {
 			return NORMAL;
 		}
         return null;
-        
     }
-    
 }

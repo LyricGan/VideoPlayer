@@ -12,78 +12,62 @@ import com.videoplayer.library.R;
 
 import java.util.List;
 
-/**
- * @author LIXIAOPENG
- * @description 相关视频
- */
 public class RelatedVideoAdapter extends BaseAdapter {
-
     private List<RelateVideoInfo> list;
-
-    private LayoutInflater inflater;
-    RelateVideoInfo mrelateVideoInfo;
+    private LayoutInflater mInflater;
+    RelateVideoInfo mRelateVideoInfo;
     private Context mContext;
     private CallBack callBack;
 
-    public RelatedVideoAdapter(List<RelateVideoInfo> videoInfoList, Context context,RelateVideoInfo relateVideoInfo) {
+    public RelatedVideoAdapter(List<RelateVideoInfo> videoInfoList, Context context, RelateVideoInfo relateVideoInfo) {
         this.list = videoInfoList;
-        this.mrelateVideoInfo=relateVideoInfo;
-        this.mContext=context;
-        inflater = LayoutInflater.from(mContext);
+        this.mRelateVideoInfo = relateVideoInfo;
+        this.mContext = context;
+        mInflater = LayoutInflater.from(mContext);
     }
 
     @Override
     public int getCount() {
-        if (list == null) {
-            return 0;
-        }
-        return list.size();
+        return list != null ? list.size() : 0;
     }
 
     @Override
     public RelateVideoInfo getItem(int position) {
-        if (list == null) {
-            return null;
-        }
         return list.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     public void refreshList(List<RelateVideoInfo> list) {
         this.list = list;
         notifyDataSetInvalidated();
     }
-   public void refreshCurrentReleteVideoInfo(RelateVideoInfo currentRelateVideoInfo){
-       this.mrelateVideoInfo = currentRelateVideoInfo;
-       notifyDataSetInvalidated();
-   }
+
+    public void refreshCurrentReleteVideoInfo(RelateVideoInfo currentRelateVideoInfo) {
+        this.mRelateVideoInfo = currentRelateVideoInfo;
+        notifyDataSetInvalidated();
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
-
         if (convertView == null) {
             viewHolder = new ViewHolder();
-
-            convertView = inflater.inflate(R.layout.blue_media_player_relate_videoinfo, null);
-
+            convertView = mInflater.inflate(R.layout.blue_media_player_relate_videoinfo, null);
             viewHolder.videoImage = (ImageView) convertView.findViewById(R.id.play_status);
             viewHolder.videoTextName = (TextView) convertView.findViewById(R.id.tv_movie_name);
-
             convertView.setTag(viewHolder);
-
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
         RelateVideoInfo item = getItem(position);
-        if(item.getId()==mrelateVideoInfo.getId()){
+        if (item.getId() == mRelateVideoInfo.getId()) {
             viewHolder.videoImage.setVisibility(View.VISIBLE);
             viewHolder.videoTextName.setTextColor(mContext.getResources().getColor(R.color.blue));
-        }else{
+        } else {
             viewHolder.videoImage.setVisibility(View.GONE);
             viewHolder.videoTextName.setTextColor(mContext.getResources().getColor(R.color.white));
         }
@@ -92,13 +76,13 @@ public class RelatedVideoAdapter extends BaseAdapter {
         return convertView;
     }
 
-
     class ViewHolder {
         public ImageView videoImage;
         public TextView videoTextName;
     }
-   public interface  CallBack{
-     public void isSelected(int position);
- }
+
+    public interface CallBack {
+        void isSelected(int position);
+    }
 }
 

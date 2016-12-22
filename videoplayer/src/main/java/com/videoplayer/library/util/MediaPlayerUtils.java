@@ -96,7 +96,6 @@ public class MediaPlayerUtils {
 //                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
 //                | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
 //                | View.SYSTEM_UI_FLAG_IMMERSIVE);
-
         if (Build.VERSION.SDK_INT >= 16) {
             window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
@@ -155,7 +154,6 @@ public class MediaPlayerUtils {
     }
 
     public static int getDeviceNaturalOrientation(Window window) {
-
         Display display;
         DisplayMetrics displayMetrics = new DisplayMetrics();
         display = window.getWindowManager().getDefaultDisplay();
@@ -185,19 +183,15 @@ public class MediaPlayerUtils {
     }
 
     public static int getUsedDisplayWidth(Window window) {
-        int width = 0;
         DisplayMetrics displayMetrics = new DisplayMetrics();
         window.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        width = displayMetrics.widthPixels;
-        return width;
+        return displayMetrics.widthPixels;
     }
 
     public static int getUsedDisplayHeight(Window window) {
-        int height = 0;
         DisplayMetrics displayMetrics = new DisplayMetrics();
         window.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        height = displayMetrics.heightPixels;
-        return height;
+        return displayMetrics.heightPixels;
     }
 
     /*
@@ -214,7 +208,6 @@ public class MediaPlayerUtils {
             Log.i(Constants.LOG_TAG, "usedDisplayWidth :" + usedDisplayWidth + ", usedDisplayHeight :" + usedDisplayHeight);
             Log.i(Constants.LOG_TAG, "realDisplayWidth :" + realDisplayWidth + ", realDisplayHeight :" + realDisplayHeight);
         }
-
         if (usedDisplayWidth < realDisplayWidth) {
             deviceNavigationType = DEVICE_NAVIGATION_TYPE_HANDSET;
         } else if (usedDisplayHeight < realDisplayHeight) {
@@ -251,8 +244,9 @@ public class MediaPlayerUtils {
     public static boolean checkSystemGravity(Context context) {
         try {
             int systemGravity = Settings.System.getInt(context.getContentResolver(), Settings.System.ACCELEROMETER_ROTATION);
-            if (systemGravity == 1)
+            if (systemGravity == 1) {
                 return true;
+            }
         } catch (SettingNotFoundException e) {
             e.printStackTrace();
         }

@@ -1,9 +1,13 @@
 package com.videoplayer.library.model;
 
-/**
- * Created by lenovo on 2016/4/28.
- */
 public class MediaQualityBean {
+    private String videoName;
+    private int vid;
+    private String url;
+    private String qualityName;
+    private int qualityCode;
+    private boolean isSelect = false;
+
     public int getVid() {
         return vid;
     }
@@ -19,13 +23,6 @@ public class MediaQualityBean {
     public void setVideoName(String videoName) {
         this.videoName = videoName;
     }
-
-    private String videoName;
-    private int vid;
-    private String url;
-    private String qualityName;
-    private int qualityCode;
-    private boolean isSelect = false;
 
     public String getUrl() {
         return url;
@@ -58,6 +55,4 @@ public class MediaQualityBean {
     public void setSelect(boolean select) {
         isSelect = select;
     }
-
-
 }

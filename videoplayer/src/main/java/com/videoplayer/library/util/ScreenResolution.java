@@ -37,11 +37,11 @@ public class ScreenResolution {
      *
      * @return a pair to return the width and height
      */
-    public static Pair<Integer, Integer> getResolution(Context ctx) {
+    public static Pair<Integer, Integer> getResolution(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            return getRealResolution(ctx);
+            return getRealResolution(context);
         } else {
-            return getRealResolutionOnOldDevice(ctx);
+            return getRealResolutionOnOldDevice(context);
         }
     }
 
@@ -50,9 +50,9 @@ public class ScreenResolution {
      * Tries the reflection to get the real resolution first.
      * Fall back to getDisplayMetrics if the above method failed.
      */
-    private static Pair<Integer, Integer> getRealResolutionOnOldDevice(Context ctx) {
+    private static Pair<Integer, Integer> getRealResolutionOnOldDevice(Context context) {
         try {
-            WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();
             Method mGetRawWidth = Display.class.getMethod("getRawWidth");
             Method mGetRawHeight = Display.class.getMethod("getRawHeight");
@@ -60,7 +60,7 @@ public class ScreenResolution {
             Integer realHeight = (Integer) mGetRawHeight.invoke(display);
             return new Pair<>(realWidth, realHeight);
         } catch (Exception e) {
-            DisplayMetrics disp = ctx.getResources().getDisplayMetrics();
+            DisplayMetrics disp = context.getResources().getDisplayMetrics();
             return new Pair<>(disp.widthPixels, disp.heightPixels);
         }
     }
@@ -69,8 +69,8 @@ public class ScreenResolution {
      * Gets real resolution via the new getRealMetrics API.
      */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    private static Pair<Integer, Integer> getRealResolution(Context ctx) {
-        WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
+    private static Pair<Integer, Integer> getRealResolution(Context context) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
         display.getRealMetrics(metrics);

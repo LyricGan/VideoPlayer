@@ -1,7 +1,6 @@
 package com.videoplayer.library.model;
 
 public enum MediaPlayerVideoQuality {
-
     UNKNOWN(MediaPlayerVideoQuality.VIDEO_QUALITY_UNKNOWN, "未知"),
     SD(MediaPlayerVideoQuality.VIDEO_QUALITY_SD, "标清"),
     HD(MediaPlayerVideoQuality.VIDEO_QUALITY_HD, "高清"),
@@ -12,13 +11,13 @@ public enum MediaPlayerVideoQuality {
     public static final int VIDEO_QUALITY_HD = 2;
     public static final int VIDEO_QUALITY_SSD = 3;
 
+    private int flag = VIDEO_QUALITY_UNKNOWN;
+    private String name;
+
     private MediaPlayerVideoQuality(int flag, String name) {
         this.flag = flag;
         this.name = name;
     }
-
-    private int flag = VIDEO_QUALITY_UNKNOWN;
-    private String name;
 
     public int getFlag() {
         return flag;
@@ -40,7 +39,5 @@ public enum MediaPlayerVideoQuality {
                 return SD;
         }
         return null;
-
     }
-
 }

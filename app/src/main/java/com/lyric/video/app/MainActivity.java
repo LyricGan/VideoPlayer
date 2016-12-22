@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.videoplayer.library.VideoPlayer;
 
 public class MainActivity extends Activity {
-    private static final String TEST_URL = "http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4";
+    private static final String VIDEO_URL = "http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4";
     private VideoPlayer videoPlayer;
 
     @Override
@@ -15,7 +15,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         videoPlayer = (VideoPlayer) findViewById(R.id.video_player);
 
-        videoPlayer.play(TEST_URL);
+        playVideo();
+    }
+
+    private void playVideo() {
+        videoPlayer.play(VIDEO_URL);
     }
 
     @Override

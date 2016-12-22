@@ -1,46 +1,36 @@
 package com.videoplayer.library.model;
 
-/**
- * @description 相关信息
- * @author LIXIAOPENG
- * 
- */
 public class RelateVideoInfo {
-    
 	/**
 	 * 视频的长度
 	 */
     private int duration;
-    
 	/**
      * 视频ID  
      */
     private int id;
-    
     /**
      * 视频名字  
      */
     private String displayName;
-    
     /**
      * 视频地址
      */
     private String path;
-    
     /**
      * 主演
      */
     private String mActor;
-    
     /**
      * 影片简介
      */
     private String summary;
-    
     /**
      * 视频海报地址
      */
     private String mPicUrl;
+
+    private boolean isPlaying;
 
     public boolean isPlaying() {
         return isPlaying;
@@ -49,16 +39,13 @@ public class RelateVideoInfo {
     public void setPlaying(boolean playing) {
         isPlaying = playing;
     }
-
-    private boolean isPlaying;
-
     
-	public String getmPicUrl() {
+	public String getPicUrl() {
 		return mPicUrl;
 	}
 
-	public void setmPicUrl(String mPicUrl) {
-		this.mPicUrl = mPicUrl;
+	public void setPicUrl(String picUrl) {
+		this.mPicUrl = picUrl;
 	}
 
 	public String getSummary() {
@@ -108,5 +95,4 @@ public class RelateVideoInfo {
 	public void setPath(String path) {
 		this.path = path;
 	}
-
 }

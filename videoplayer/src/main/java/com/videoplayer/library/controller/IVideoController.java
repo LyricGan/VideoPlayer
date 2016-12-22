@@ -2,7 +2,6 @@ package com.videoplayer.library.controller;
 
 import android.widget.MediaController.MediaPlayerControl;
 
-
 public interface IVideoController extends MediaPlayerControl {
 
     int getPlayMode();
@@ -20,5 +19,4 @@ public interface IVideoController extends MediaPlayerControl {
     void onMovieRatioChange(int screenSize);
 
     boolean canStart();
-
 }
