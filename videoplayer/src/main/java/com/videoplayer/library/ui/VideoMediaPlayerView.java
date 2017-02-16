@@ -47,7 +47,7 @@ import com.videoplayer.library.videoview.MediaPlayerVideoView;
 import java.lang.reflect.Constructor;
 import java.util.List;
 
-public abstract class VideoMediaPlayerView extends RelativeLayout implements IPowerStateListener {
+public class VideoMediaPlayerView extends RelativeLayout implements IPowerStateListener {
     private static final int QUALITY_BEST = 100;
     private Activity mActivity;
     private LayoutInflater mLayoutInflater;
