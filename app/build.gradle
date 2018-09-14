@@ -20,9 +20,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':videoplayer')
-    compile rootProject.ext.dependencies.appCompat
-
-    testCompile rootProject.ext.dependencies.jUnit
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':videoplayer')
 }
