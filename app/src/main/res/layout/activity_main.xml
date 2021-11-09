@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.videoplayer.library.ui.VideoMediaPlayerView
-        android:id="@+id/video_media_player_view"
+    <com.lyricgan.media.video.VideoPlayerView
+        android:id="@+id/video_player_view"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         app:layout_height="220"
-        app:play_mode="window"/>
+        app:play_mode="window" />
 </RelativeLayout>

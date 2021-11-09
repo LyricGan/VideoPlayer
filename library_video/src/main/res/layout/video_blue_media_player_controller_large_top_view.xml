@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/controller_large_bottom_bg"
+    android:layout_alignParentTop="true"
+    android:alpha="0.95"
+    android:background="#1b1b1b">
+
+    <RelativeLayout
+        android:id="@+id/controller_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/back_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/back_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/controller_large_top_margin"
+                android:layout_marginRight="@dimen/controller_large_top_margin"
+                android:src="@drawable/blue_ksy_back"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="150dp"
+            android:layout_toRightOf="@id/back_layout"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            tools:text="大讲堂"/>
+
+        <TextView
+            android:id="@+id/video_top_switch_parts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/video_margin_right"
+            android:paddingBottom="6dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="6dp"
+            android:paddingTop="6dp"
+            android:text="选集"
+            android:textColor="@color/gray_primary_dark"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/video_top_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/video_margin_right"
+            android:layout_toLeftOf="@+id/video_top_switch_parts"
+            android:padding="6dp"
+            android:text="高清"
+            android:textColor="@color/gray_primary_dark"
+            android:textSize="13sp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
