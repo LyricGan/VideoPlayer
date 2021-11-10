@@ -1,4 +1,4 @@
-package com.lyricgan.app.samples;
+package com.lyricgan.demo.video;
 
 import android.os.Bundle;
 
@@ -7,14 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
-import com.lyricgan.app.samples.databinding.ActivityMainBinding;
+import com.lyricgan.demo.video.databinding.ActivityMainBinding;
 import com.lyricgan.media.video.VideoPlayerView;
 import com.lyricgan.media.video.model.MediaPlayMode;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+    private ActivityMainBinding viewBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,32 +39,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (binding != null) {
-            binding.videoPlayerView.onResume();
+        if (viewBinding != null) {
+            viewBinding.videoPlayerView.onResume();
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (binding != null) {
-            binding.videoPlayerView.onPause();
+        if (viewBinding != null) {
+            viewBinding.videoPlayerView.onPause();
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (binding != null) {
-            binding.videoPlayerView.onDestroy();
+        if (viewBinding != null) {
+            viewBinding.videoPlayerView.onDestroy();
         }
     }
 
     private void initViews() {
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        viewBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(viewBinding.getRoot());
 
-        binding.videoPlayerView.setPlayerViewCallback(new VideoPlayerView.PlayerViewCallback() {
+        viewBinding.videoPlayerView.setPlayerViewCallback(new VideoPlayerView.PlayerViewCallback() {
             @Override
             public void hideViews() {
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish(int playMode) {
                 if (playMode == MediaPlayMode.FULLSCREEN) {
-                    binding.videoPlayerView.requestPlayMode(MediaPlayMode.WINDOW);
+                    viewBinding.videoPlayerView.requestPlayMode(MediaPlayMode.WINDOW);
                 } else if (playMode == MediaPlayMode.WINDOW) {
                     onBackPressed();
                 }
@@ -104,6 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        binding.videoPlayerView.play("http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4");
+        viewBinding.videoPlayerView.play("http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4");
     }
 }
