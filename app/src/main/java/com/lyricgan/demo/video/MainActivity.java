@@ -67,27 +67,22 @@ public class MainActivity extends AppCompatActivity {
         viewBinding.videoPlayerView.setPlayerViewCallback(new VideoPlayerView.PlayerViewCallback() {
             @Override
             public void hideViews() {
-
             }
 
             @Override
             public void restoreViews() {
-
             }
 
             @Override
             public void onPrepared() {
-
             }
 
             @Override
             public void onQualityChanged(int quality) {
-
             }
 
             @Override
             public void onCourseChanged(int videoId) {
-
             }
 
             @Override
@@ -101,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError(int errorCode, String errorMsg) {
-
             }
         });
-        viewBinding.videoPlayerView.play("http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4");
+        final String url = "http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4";
+        viewBinding.videoPlayerView.play(url);
     }
 }
