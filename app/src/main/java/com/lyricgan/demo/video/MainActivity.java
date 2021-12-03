@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             public void onError(int errorCode, String errorMsg) {
             }
         });
-        final String url = "http://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4";
+        final String url = "https://mvvideo2.meitudata.com/572e1dbe4fe681155.mp4";
         viewBinding.videoPlayerView.play(url);
     }
 }
